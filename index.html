@@ -1,291 +1,548 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingrid Guimarães | Neuropsicóloga CRP-03/12446</title>
-    <meta name="description" content="Neuropsicóloga clínica com abordagem em TCC e Terapia do Esquema. Avaliação, diagnóstico e reabilitação neuropsicológica.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consultório Ingrid Guimarães | Neuropsicologia em Salvador/BA</title>
+    <meta name="description" content="Neuropsicóloga clínica especializada em TCC e Terapia do Esquema. Avaliação, diagnóstico e reabilitação neuropsicológica em Salvador, Bahia. Agende sua consulta!" />
+    
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="./img/logo com circulo.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="./img/apple-touch-icon.png"> <link rel="canonical" href="https://www.consultorioingridguimaraes.com.br/">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.consultorioingridguimaraes.com.br/">
+    <meta property="og:title" content="Consultório Ingrid Guimarães | Neuropsicologia em Salvador/BA">
+    <meta property="og:description" content="Neuropsicóloga clínica especializada em TCC e Terapia do Esquema. Avaliação, diagnóstico e reabilitação neuropsicológica em Salvador, Bahia. Agende sua consulta!">
+    <meta property="og:image" content="https://www.consultorioingridguimaraes.com.br/img/social-share.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.consultorioingridguimaraes.com.br/">
+    <meta property="twitter:title" content="Consultório Ingrid Guimarães | Neuropsicologia em Salvador/BA">
+    <meta property="twitter:description" content="Neuropsicóloga clínica especializada em TCC e Terapia do Esquema. Avaliação, diagnóstico e reabilitação neuropsicológica em Salvador, Bahia. Agende sua consulta!">
+    <meta property="twitter:image" content="https://www.consultorioingridguimaraes.com.br/img/social-share.jpg"> <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7c3aed',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        /* Estilos iniciais para os cards de serviço para a animação JS */
+        #servicos > div > div {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        /* A classe animate-slide-up será adicionada pelo JS */
+    </style>
 </head>
-<body>
-    <!-- Cabeçalho -->
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="./img/logo.jpg" alt="Ingrid Guimarães" class="logo-img">
-                <div class="logo-text">
-                    <h1>Ingrid Guimarães</h1>
-                    <p>Neuropsicóloga Clínica</p>
+
+<body class="font-sans text-gray-800 bg-gradient-to-br from-purple-50 to-indigo-100 min-h-screen">
+    <header class="fixed w-full top-0 z-50 glass-effect border-b border-white/20 transition-all duration-300" id="header">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+            <div class="flex items-center gap-4 animate-fade-in">
+                <div class="relative">
+                    <img src="./img/logo com circulo.jpg" alt="Logo circular do Consultório Ingrid Guimarães" class="w-12 h-12 rounded-full border-2 border-white shadow-lg" loading="eager" /> <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-white">Consultório Ingrid Guimarães</h1>
+                    <p class="text-sm text-purple-100">Neuropsicóloga Clínica | CRP-03/12446</p>
                 </div>
             </div>
-            
-            <div class="crp-badge">CRP-03/12446</div>
-            
-            <nav class="nav">
-                <a href="#sobre" class="nav-link">Sobre</a>
-                <a href="#servicos" class="nav-link">Serviços</a>
-                <a href="#localizacao" class="nav-link">Localização</a>
-                <a href="#contato" class="nav-link">Contato</a>
+
+            <nav class="hidden md:flex gap-8 text-sm">
+                <a href="#sobre" class="text-white hover:text-purple-200 transition-colors duration-300 font-medium">Sobre</a>
+                <a href="#servicos" class="text-white hover:text-purple-200 transition-colors duration-300 font-medium">Serviços</a>
+                <a href="#localizacao" class="text-white hover:text-purple-200 transition-colors duration-300 font-medium">Localização</a>
+                <a href="#contato" class="text-white hover:text-purple-200 transition-colors duration-300 font-medium">Contato</a>
+            </nav>
+
+            <button class="md:hidden text-white" id="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <div class="md:hidden bg-white/95 backdrop-blur-md border-t border-purple-200 hidden" id="mobile-menu">
+            <nav class="flex flex-col p-4 space-y-3">
+                <a href="#sobre" class="text-purple-800 hover:text-purple-600 transition-colors duration-300 font-medium">Sobre</a>
+                <a href="#servicos" class="text-purple-800 hover:text-purple-600 transition-colors duration-300 font-medium">Serviços</a>
+                <a href="#localizacao" class="text-purple-800 hover:text-purple-600 transition-colors duration-300 font-medium">Localização</a>
+                <a href="#contato" class="text-purple-800 hover:text-purple-600 transition-colors duration-300 font-medium">Contato</a>
             </nav>
         </div>
     </header>
 
-    <!-- Seção Hero -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">Atendimento Especializado em Neuropsicologia e Psicoterapial</h1>
-            <p class="hero-subtitle">Oferecemos serviços de avaliação, diagnóstico e reabilitação cognitiva para crianças, adultos e idosos.</p>
-            <div class="hero-buttons">
-                <a href="https://wa.me/5571920038279" class="btn btn-primary">Agendar Consulta</a>
-                <a href="#servicos" class="btn btn-outline">Conheça os Serviços</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Sobre -->
-    <section id="sobre" class="section">
-        <div class="container">
-            <h2 class="section-title">Sobre a Profissional</h2>
-            
-            <div class="about">
-                <div class="about-image">
-                    <img src="./img/always.png" alt="Ingrid Guimarães" loading="lazy"/>
-                </div>
-                
-                <div class="about-content">
-                    <h3>Ingrid Guimarães</h3>
-                    
-                    <div class="professional-info">
-                      <p>Sou Neuropsicóloga com especialização clínica, com mais de 8 anos de experiência na avaliação, diagnóstico e reabilitação das funções cognitivas. Trabalho com crianças, adultos e idosos, oferecendo um atendimento humanizado e personalizado, com base em evidências científicas.
-                        
-                      </p>
-                        <p><i class="fas fa-graduation-cap"></i> <strong>Formação:</strong> Psicologia pela UNIFACS (2014)</p>
-                        <p><i class="fas fa-certificate"></i> <strong>Especialização:</strong> Neuropsicologia Clínica</p>
-                        <p><i class="fas fa-heart"></i> <strong>Abordagens:</strong> TCC e Terapia do Esquema</p>
+    <main>
+        <section class="gradient-bg pt-24 pb-20 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="relative z-10 max-w-4xl mx-auto px-4">
+                <div class="animate-slide-up">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
+                        Cuidado Neuropsicológico
+                        <span class="text-purple-200">Humanizado</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl text-purple-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+                        Avaliação, diagnóstico e reabilitação cognitiva para crianças, adultos e idosos com excelência e dedicação.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                        <a href="https://wa.me/5571920038279"
+                        class="bg-green-600 text-white px-8 py-4 rounded-full hover:bg-green-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            Agendar Consulta
+                        </a>
+                        <a href="#servicos"
+                        class="bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold border border-white/30 hover:border-white/50">
+                            Conheça os Serviços
+                        </a>
                     </div>
-                    
-                  <!--   <p><strong>Com mais de 8 anos de experiência, atuo na avaliação, diagnóstico e reabilitação de funções cognitivas, além de psicoterapia para adultos e idosos.</strong></p> -->
-                    
-                    <div class="professional-highlights">
-                        <div class="highlight-card">
-                            <i class="fas fa-brain"></i>
-                            <p>Avaliações Neuropsicológicas Completa</p>
+                </div>
+            </div>
+
+            <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-16 h-16 bg-purple-300/20 rounded-full animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/4 w-12 h-12 bg-indigo-300/20 rounded-full animate-float" style="animation-delay: 2s;"></div>
+        </section>
+
+        <section id="sobre" class="py-20 px-4 max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative group flex justify-center items-center p-8">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+                    <figure class="relative z-10 p-4 bg-white rounded-2xl shadow-2xl hover-lift overflow-hidden flex items-center justify-center">
+                        <img src="./img/logo.jpg" alt="Logo do Consultório Ingrid Guimarães - Avaliação e Reabilitação Neuropsicológica"
+                             class="max-w-full h-auto max-h-64 object-contain p-4 md:p-8" loading="lazy">
+                    </figure>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                            Sobre a <span class="text-purple-600">Profissional</span>
+                        </h3>
+                        <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full mb-6"></div>
+                    </div>
+
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Sou Neuropsicóloga com mais de 8 anos de experiência na avaliação, diagnóstico e reabilitação das funções cognitivas. Trabalho com todas as faixas etárias, oferecendo um atendimento humanizado e baseado em evidências científicas.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Formação Acadêmica</h4>
+                                <p class="text-gray-600">Psicologia pela UNIFACS (2014)</p>
+                            </div>
                         </div>
-                        <div class="highlight-card">
-                            <i class="fas fa-hand-holding-heart"></i>
-                            <p>Atendimento Humanizado</p>
+
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-certificate text-indigo-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Especialização</h4>
+                                <p class="text-gray-600">Neuropsicologia Clínica</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-heart text-pink-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Abordagens Terapêuticas</h4>
+                                <p class="text-gray-600">TCC e Terapia do Esquema</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seção Serviços -->
-    <section id="servicos" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Serviços Especializados</h2>
-            
-            <div class="services-grid">
-                <!-- Serviço 1 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="card-title">Avaliação Neuropsicológica</h3>
-                    <ul class="service-list">
-                        <li>Diagnóstico de demências</li>
-                        <li>Avaliação de TDAH</li>
-                        <li>Investigação de sequelas neurológicas</li>
-                        <li>Relatório detalhado</li>
-                    </ul>
+        <section id="servicos" class="py-20 px-4 bg-gradient-to-br from-gray-50 to-purple-50">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                        Serviços <span class="text-purple-600">Especializados</span>
+                    </h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Oferecemos uma gama completa de serviços neuropsicológicos com abordagem personalizada e humanizada.
+                    </p>
                 </div>
-                
-                <!-- Serviço 2 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-comments"></i>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-brain text-2xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 text-gray-800">Avaliação Neuropsicológica</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>TDAH e Transtornos de Aprendizagem</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>Demências e Declínio Cognitivo</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>Sequelas Neurológicas</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>Relatório Detalhado</span>
+                            </li>
+                        </ul>
                     </div>
-                    <h3 class="card-title">Psicoterapia</h3>
-                    <ul class="service-list">
-                        <li>Terapia Cognitivo-Comportamental (TCC)</li>
-                        <li>Terapia do Esquema</li>
-                        <li>Ansiedade e depressão</li>
-                        <li>Transtornos emocionais</li>
-                    </ul>
-                </div>
-                
-                <!-- Serviço 3 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-heartbeat"></i>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-comments text-2xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 text-gray-800">Psicoterapia</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>Terapia Cognitivo-Comportamental</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>Terapia do Esquema</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>Transtornos Emocionais</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>Acompanhamento Personalizado</span>
+                            </li>
+                        </ul>
                     </div>
-                    <h3 class="card-title">Reabilitação Cognitiva</h3>
-                    <ul class="service-list">
-                        <li>Estimulação de memória</li>
-                        <li>Treino de atenção</li>
-                        <li>Otimização de funções executivas</li>
-                        <li>Estratégias compensatórias</li>
-                    </ul>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-heartbeat text-2xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 text-gray-800">Reabilitação Cognitiva</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>Memória e Atenção</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>Funções Executivas</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>Estratégias Compensatórias</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-sm"></i>
+                                <span>Treino Cognitivo</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seção Localização -->
-    <section id="localizacao" class="section">
-        <div class="container">
-            <h2 class="section-title">Onde Me Encontrar</h2>
-            
-            <div class="location-container">
-                <div class="location-info">
-                    <div class="address-card">
-                        <h3><i class="fas fa-map-marker-alt"></i> Consultório</h3>
-                        <p>Avenida Tancredo Neves, 1632</p>
-                        <p>Sala 517 - Caminho das Árvores</p>
-                        <p>Salvador/BA</p>
-                    </div>
-                    
-                    <div class="transport-card">
-                        <h4><i class="fas fa-subway"></i> Acesso</h4>
-                        <p>Próximo ao Shopping Salvador</p>
-                        <p>Estacionamento no local</p>
-                    </div>
-                </div>
-                
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.829842553112!2d-38.45680449728391!3d-12.982732765849663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161b1003358b8b%3A0x5c2838ad0eb56dc3!2sCondom%C3%ADnio%20do%20Salvador%20Trade%20Center%20-%20Av.%20Tancredo%20Neves%2C%201632%20-%20Pernambu%C3%A9s%2C%20Salvador%20-%20BA%2C%2041100-800!5e0!3m2!1spt-BR!2sbr!4v1743978133891!5m2!1spt-BR!2sbr" 
-                            width="100%" 
-                            height="400" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy"></iframe>
-                </div>               
+        <section id="localizacao" class="py-20 px-4 max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Nossa <span class="text-purple-600">Localização</span>
+                </h3>
+                <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Consultório localizado em região de fácil acesso, com ambiente acolhedor e estrutura completa.
+                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Seção Contato -->
-    <section id="contato" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Agende Sua Consulta</h2>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <h3><i class="fas fa-phone-alt"></i> Telefone</h3>
-                        <p>(71) 92003-8279</p>
-                    </div>
-                                       
-                    <div class="contact-card">
-                        <h3><i class="fas fa-envelope"></i> Email</h3>
-                        <p>ingridgbomfim@gmail.com</p>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <h3><i class="fas fa-calendar-alt"></i> Horários</h3>
-                        <p>Segunda a Sexta: 10h às 20h</p>                        
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/psi.ingridg/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5571920038279" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-               <!--          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a> -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h4 class="text-xl font-bold mb-6 text-gray-800">Informações de Localização</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800">Endereço</h5>
+                                <p class="text-gray-600">Avenida Tancredo Neves, 1632 - Sala 517 - Caminho das Árvores, Salvador/Bahia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-green-600"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800">Horário de Funcionamento</h5>
+                                <p class="text-gray-600">Segunda a Sexta: 10h às 20h</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-parking text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800">Facilidades</h5>
+                                <p class="text-gray-600">Estacionamento disponível</p>
+                                <p class="text-gray-600">Acessibilidade completa</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="contact-form">
-                  <form id="contactForm" action="https://formspree.io/f/xdkepgoo" method="POST">
-                    <!-- Campos Ocultos para Melhor Organização -->
-                    <input type="hidden" name="_subject" value="Novo contato do site - Dra. Ingrid">
-                    <input type="hidden" name="_language" value="pt-BR">
-                    
-                    <!-- Campos do Formulário -->
-                    <div class="form-group">
-                      <label for="nome" class="form-label">Nome Completo*</label>
-                      <input type="text" id="nome" name="nome" class="form-control" required minlength="3">
+                <div class="bg-gray-200 rounded-2xl h-80 flex items-center justify-center" id="map-container">
+                    <div class="text-center text-gray-500" id="map-placeholder">
+                        <i class="fas fa-map text-4xl mb-4"></i>
+                        <p>Mapa interativo será carregado aqui</p>
                     </div>
-                    
-                    <div class="form-group">
-                      <label for="email" class="form-label">Email*</label>
-                      <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                      <label for="telefone" class="form-label">Telefone*</label>
-                      <input type="tel" id="telefone" name="telefone" class="form-control" required
-                             pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}">
-                      <small class="hint">Formato: (71) 91234-5678</small>
-                    </div>
-                    
-                    <div class="form-group">
-                      <label for="mensagem" class="form-label">Mensagem*</label>
-                      <textarea id="mensagem" name="mensagem" class="form-control" rows="5" required minlength="10"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-submit">
-                      <span class="btn-text">Enviar Mensagem</span>
-                      <span class="spinner"></span>
-                    </button>
-                    
-                    <div id="formAlert" class="alert"></div>
-                  </form>
-                </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <div class="whatsapp-float">
-      <a href="https://wa.me/5571920038279" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-text">Agende por WhatsApp</span>
-      </a>
-    </div>
+        </section>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <h3>Ingrid Guimarães</h3>
-                        <p>Neuropsicóloga Clínica</p>
+        <section id="contato" class="py-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                        Agende Sua <span class="text-purple-600">Consulta</span>
+                    </h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Entre em contato conosco e dê o primeiro passo para cuidar da sua saúde mental e cognitiva.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-6">Informações de Contato</h4>
+
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800">WhatsApp</h5>
+                                <a href="https://wa.me/5571920038279" class="text-green-600 hover:text-green-700 transition-colors duration-300">
+                                    (71) 9 2003-8279
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800">E-mail</h5>
+                                <p class="text-gray-600">clinicaingridguimaraes@gmail.com</p> 
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-calendar text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800">Agendamento</h5>
+                                <p class="text-gray-600">Consultas presenciais e online</p>
+                            </div>
+                        </div>
                     </div>
-                    <p>CRP-03/12446</p>
-                    <p>Atendimento especializado em saúde mental</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#localizacao">Localização</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Contato</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Av. Tancredo Neves, 1632 - Salvador/BA</p>
-                    <p><i class="fas fa-phone-alt"></i> (71) 92003-8279</p>
-                    <p><i class="fas fa-envelope"></i> ingridgbomfim@gmail.com </p>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <form action="https://formspree.io/f/xdkepgoo" method="POST" class="space-y-6" id="contact-form">
+                            <input type="hidden" name="_subject" value="Novo contato do site - Consultório Ingrid" />
+
+                            <div>
+                                <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">Nome completo</label>
+                                <input type="text" name="nome" id="nome"
+                                    class="w-full border border-gray-300 p-4 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                                    required />
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                                <input type="email" name="email" id="email"
+                                    class="w-full border border-gray-300 p-4 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                                    required />
+                            </div>
+
+                            <div>
+                                <label for="telefone" class="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
+                                <input type="tel" name="telefone" id="telefone"
+                                    class="w-full border border-gray-300 p-4 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                                    required />
+                            </div>
+
+                            <div>
+                                <label for="mensagem" class="block text-sm font-medium text-gray-700 mb-2">Sua mensagem</label>
+                                <textarea name="mensagem" id="mensagem" rows="5"
+                                          class="w-full border border-gray-300 p-4 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                                          required></textarea>
+                            </div>
+
+                            <button type="submit"
+                                    class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 Ingrid Guimarães - Todos os direitos reservados</p>
-                <a href="https://taisgb.com.br">Desenvolvido com <i class="fas fa-heart"></i> para sua saúde mental</a>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="./img/logo com circulo.jpg" alt="Logo circular do Consultório Ingrid Guimarães" class="w-10 h-10 rounded-full" loading="lazy">
+                        <h4 class="text-lg font-bold">Consultório Ingrid Guimarães</h4>
+                    </div>
+                    <p class="text-gray-400 mb-4">Neuropsicóloga Clínica especializada em cuidado humanizado e baseado em evidências.</p>
+                    <p class="text-sm text-gray-500">CRP-03/12446</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fab fa-whatsapp mr-2"></i> (71) 9 2003-8279</p>
+                        <p><i class="fas fa-envelope mr-2"></i> clinicaingridguimaraes@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Avenida Tancredo Neves, 1632 - Sala 517<br>Caminho das Árvores - Salvador/BA</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Horários</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>Segunda a Sexta: 10h às 20h</p>
+                        <p>Sábado: Fechado</p>
+                        <p>Domingo: Fechado</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 mb-2">© 2025 Consultório Ingrid Guimarães. Todos os direitos reservados.</p>
+                <p class="text-sm text-gray-500">
+                    Desenvolvido por <a href="https://taisgb.com.br" class="text-purple-400 hover:text-purple-300 transition-colors duration-300" target="_blank" rel="noopener noreferrer">taisgb.com.br</a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="./js/script.js"></script>
+    <a href="https://wa.me/5571920038279"
+    class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 z-50 animate-float"
+    aria-label="Contatar via WhatsApp"> <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
 
-    
+    <button id="back-to-top"
+            class="fixed bottom-24 right-6 bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-purple-700 transition-all duration-300 hover:scale-110 z-50 opacity-0 invisible"
+            aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <script src="./js/script.js" defer></script>
+    <script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "MedicalOrganization",
+        "name": "Consultório Ingrid Guimarães",
+        "url": "https://www.consultorioingridguimaraes.com.br/",
+        "logo": "https://www.consultorioingridguimaraes.com.br/logo.jpg",
+        "image": "https://www.consultorioingridguimaraes.com.br/img/social-share.jpg",
+        "description": "Neuropsicóloga clínica especializada em TCC e Terapia do Esquema. Avaliação, diagnóstico e reabilitação neuropsicológica em Salvador, Bahia. Agende sua consulta!",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Avenida Tancredo Neves, 1632 - Sala 517",
+            "addressLocality": "Salvador",
+            "addressRegion": "BA",
+            "postalCode": "41820-021",
+            "addressCountry": "BR"
+        },
+        "telephone": "+5571920038279",
+        "email": "clinicaingridguimaraes@gmail.com",
+        "openingHoursSpecification": [
+            {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "opens": "10:00",
+            "closes": "19:00"
+            }
+            // Não há necessidade de blocos separados para Sábado e Domingo se estiverem fechados
+        ],
+        "areaServed": {
+            "@type": "City",
+            "name": "Salvador"
+        },
+        "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.498418349258!2d-38.455255085116035!3d-12.99723229085816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71604a112270921%3A0x8e50f3f2a8c7b7d!2sAv.%20Tancredo%20Neves%2C%201632%20-%20Caminho%20das%20%C3%81rvores%2C%20Salvador%20-%20BA%2C%2041820-021!5e0!3m2!1spt-BR!2sbr!4v1678912345678!5m2!1spt-BR!2sbr", // Substituído por um URL de incorporação de exemplo mais realista
+        "priceRange": "Sob consulta"
+        }
+    </script>
 </body>
 </html>
